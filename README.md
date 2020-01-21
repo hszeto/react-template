@@ -1,8 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
+## Basic template with:  
+* redux  
+* react-redux  
+* redux-thunk  
+* react-router-dom  
+  
+Fake API data from `https://jsonplaceholder.typicode.com/todos/${id}`  
 
 ### `yarn start`
 

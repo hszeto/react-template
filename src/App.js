@@ -1,25 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import { createBrowserHistory } from "history";
+
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { Provider } from 'react-redux';
+
+import rootReducer from './reducers';
+import Main from './components/Main';
+import Todo from './components/Todo';
+
+const browserHistory = createBrowserHistory();
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Router history={browserHistory} >
+        <div>
+          <Switch>
+            <Route exact path="/" component={Main} />
+            <Route exact path="/todos" component={Todo} />
+            <Route path="*">404 Not Found</Route>
+          </Switch>
+        </div>
+      </Router>
+    </Provider>
   );
 }
 
