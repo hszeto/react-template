@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 
 import { getData } from '../actions/data';
@@ -34,8 +33,6 @@ export class Todo extends Component {
             Completed: {`${this.props.data.completed}`}<br />
           </div>
         }
-        <br />
-        <Link to="/">Goto Main Page</Link>
       </div>
     );
   };
