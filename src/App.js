@@ -21,7 +21,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router history={history} >
-        <div>
+        <div style={{ margin: 50, textAlign: "center" }}>
           <Header />
           <hr />
           <Switch>
