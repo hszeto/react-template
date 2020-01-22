@@ -40,7 +40,6 @@ export class Todo extends Component {
 
 
 const mapStateToProps = (state) => {
-  console.log(state.data);
   return ({
     data: state.data
   })

@@ -1,4 +1,4 @@
-export const getData = (id) => {
+export const getData = id => {
   return dispatch => {
     return new Promise((resolve, reject) => {
       return fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
